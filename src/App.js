@@ -1,10 +1,13 @@
 import './App.css';
 import { useState } from 'react';
+import axios from 'axios'
 
 function App() {
+  
 
+  const [dato, setDato] = useState("")
   const [term, setTerm] = useState("")
-
+  const [tema, setTema] = useState("")
   const handleTermChange = (event) => setTerm(event.target.value);
 
   return (
@@ -15,7 +18,7 @@ function App() {
 
       <div>
         <h2>Obtener un consejo aleatorio</h2>
-        <button>Obtener</button>
+        <button onClick={term}>Obtener</button>
         <p className="result-box"></p>
       </div>
 
@@ -29,6 +32,13 @@ function App() {
 
     </main>
   );
+}
+
+function Consejo(){
+  fetch('https://api.adviceslip.com/advice')
+  // .get((Response)) => () setTerm
+  .then((Response)) => () setDato
+  // .catch((Response)) => () setTema
 }
 
 export default App;
